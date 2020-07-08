@@ -1,0 +1,294 @@
+
+public class DemoOperator {
+	int num1=110,num2=100,num3=200;
+	public void display() {
+		boolean result1= num1>num2||num1>num3;
+		boolean result2= num1>num2&&num1>num3;
+		System.out.println("result1:"+result1);
+		System.out.println("result2:"+result2);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		DemoOperator d = new DemoOperator();
+		d.display();
+		
+
+	}
+
+}
+----------------------------------------------------------------------------------------------------------
+
+public class DemoOperator {
+	int marks=110;
+	String result;
+	public void display() {
+		result= marks>33?"Pass":"Fail";
+		
+		System.out.println("Result:"+result);
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		DemoOperator d = new DemoOperator();
+		d.display();
+		
+
+	}
+
+}
+----------------------------------------------------------------------
+
+
+public class DemoOperator {
+	int marks=110;
+	
+	public void display() {
+		marks -= 50;
+		
+		System.out.println("Result:"+marks);
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		DemoOperator d = new DemoOperator();
+		d.display();
+		
+
+	}
+
+}
+------------------------------------------------------------------------------------------------
+
+import java.util.Scanner;
+public class IfDemo {
+	int marks;
+	Scanner sc =new Scanner(System.in);
+	public void display()
+	{
+		System.out.print("Please enter your marks:");
+		marks = sc.nextInt();
+		if(marks>90 && marks<100) {
+			System.out.println("congrats you have cleared with distinction");
+			}
+		 else  if (marks > 80 && marks < 90){
+			   System.out.println("CONGARTS !! YOU HAVE CLEARED THE EXAM WITH GOOD MARKS");
+		 }
+		 else
+		 {
+			 System.out.println("Cleared with aavg marks");
+		 }
+		
+	}
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		IfDemo id = new IfDemo();
+		id. display();
+
+	}
+
+}
+---------------------------------------------------------------------------------------------------------
+
+
+import java.util.Scanner;
+
+//switch demo
+public class SwitchDemo {
+
+ int week =0;
+ Scanner sc = new Scanner(System.in);
+ public void display() {
+  System.out.print("Enter the week number (1-7 ) - Monday as 1 ..");
+  week = sc.nextInt();
+  switch (week) {
+  case 1:
+   System.out.println("Today is monday");
+   break;
+  case 2:
+   System.out.println("Today is tuesday");
+   break;
+  case 3:
+   System.out.println("Today is wednesday");
+   break;
+  case 4:
+   System.out.println("Today is thursday");
+   break;
+  case 5:
+   System.out.println("Today is friday");
+   break;
+  case 6:
+  case 7:
+   System.out.println("WEEKEND");
+   break;
+  default:
+   System.out.println("Invalid week number");
+  }
+ }
+ public static void main(String[] args) {
+  SwitchDemo d = new SwitchDemo();
+  d.display();
+ }
+
+}
+
+------------------------------------------------------------------------------------------
+
+
+
+public class LoopDemo {
+	int i;
+	public void display()
+	{i=50;
+	while(i>=10) {
+		System.out.println(i);
+		i -=10;
+	}
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		LoopDemo lp =new LoopDemo();
+		lp.display();
+
+	}
+
+}
+----------------------------------------------------------------------------------------------------------
+
+public class LoopDemo {
+	int i;
+	public void display()
+	{
+	for(i=5;i>=1;i--) {
+		System.out.println(i);
+		
+	}
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		LoopDemo lp =new LoopDemo();
+		lp.display();
+
+	}
+
+}
+---------------------------------------------------------------------------------------
+
+import java.util.Scanner;
+
+//multiple if (conditional )
+public class IfDemo {
+
+ int marks = 0;
+ Scanner sc = new Scanner(System.in);
+
+ public void display() {
+  System.out.println("Please enter to marks to know the status : ");
+  marks = sc.nextInt();
+  
+  if (marks > 90 && marks < 100) {
+   System.out.println("CONGARTS !! YOU HAVE CLEARED THE EXAM WITH DISTINCTION");
+  } 
+  else  if (marks > 80 && marks < 90){
+   System.out.println("CONGARTS !! YOU HAVE CLEARED THE EXAM WITH GOOD MARKS");
+
+}
+  else
+  {
+   System.out.println("SORRY !! YOU HAVE TO RE APPEAR FOR EXAM");
+  }
+ }
+
+ public static void main(String[] args) {
+  System.out.println("PROGRAM STARTED");
+  IfDemo d = new IfDemo();
+  d.display();
+ }
+}
+
+-------------------------------------------------------------------------------------------------------------------------
+
+
+import java.util.Scanner;
+
+//real time use case 
+public class ReadProgramAssignment {
+
+ Scanner sc = new Scanner(System.in);
+ int employeeAge=0;
+ String employeeName;
+ String choice;
+ public void display() {
+ 
+  do {
+   System.out.print("Please enter your age :");
+   employeeAge = sc.nextInt();
+   System.out.print("Please enter your name :");
+   employeeName = sc.next();
+   System.out.println(employeeName + " , your age is : " + employeeAge);
+   
+   System.out.println("Do u want to continue (Y for yes any key to exit);");
+   choice = sc.next();
+  } while (choice.equalsIgnoreCase("Y"));
+  
+  System.out.println("Thanks for using my program");
+ }
+ public static void main(String[] args) {
+  ReadProgramAssignment r = new ReadProgramAssignment();
+  r.display();
+  
+ }
+}
+
+------------------------------------------------------------------------------------------------------------------------
+
+import java.util.Scanner;
+
+//multiple if (conditional )
+public class IfDemo {
+
+ int marks = 0;
+ String choice;
+ Scanner sc = new Scanner(System.in);
+
+ public void display() {
+	 do {
+		 	System.out.println("Please enter to marks to know the status : ");
+		 	marks = sc.nextInt();
+  
+		 	if (marks >= 90 && marks < 100) {
+		 		System.out.println("CONGARTS !! YOU HAVE CLEARED THE EXAM WITH DISTINCTION");
+		 		} 
+		 	else  if (marks >80 && marks < 90){
+		 		System.out.println("CONGARTS !! YOU HAVE CLEARED THE EXAM WITH GOOD MARKS");
+
+		 		}
+			  else
+			  {
+			   System.out.println("SORRY !! YOU HAVE TO RE APPEAR FOR EXAM");
+			  }
+		 	
+		 	System.out.println("Type Y to continue");
+		 	choice= sc.next();
+         }while ( choice .equalsIgnoreCase("Y"));
+ }
+
+ public static void main(String[] args) {
+  System.out.println("PROGRAM STARTED");
+  IfDemo d = new IfDemo();
+  d.display();
+ }
+}
+----------------------------------------------------------------------------------------------------------------------------
+
+
+
+
