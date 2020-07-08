@@ -1,0 +1,116 @@
+Swaping of two numbers with TEMPORAY VARIABLE
+
+import java.util.Scanner;
+
+//switch demo
+public class Swap {
+
+ int num1 =0, num2=0, num3=0 ;
+ Scanner sc = new Scanner(System.in);
+ public void display() {
+  System.out.println("Welcome to swap");
+  System.out.print("Enter num1");
+  num1 = sc.nextInt();
+  System.out.print("Enter num2");
+  num2 = sc.nextInt();
+  num3=num1;
+  num1=num2;
+  num2=num3;
+  System.out.println("swap no:\nNum1:"+num1+" Num2:"+num2);
+ 
+ }
+ public static void main(String[] args) {
+  Swap d = new Swap();
+  d.display();
+ }
+
+}
+
+-------------------------------------------------------------------------------
+
+Swaping of two numbers without TEMPORAY VARIABLE
+import java.util.Scanner;
+
+//switch demo
+public class Swap {
+
+ int num1 =0, num2=0 ;
+ Scanner sc = new Scanner(System.in);
+ public void display() {
+  System.out.println("Welcome to swap");
+  System.out.print("Enter num1");
+  num1 = sc.nextInt();
+  System.out.print("Enter num2");
+  num2 = sc.nextInt();
+  num1=num1+num2;
+  num2=num1-num2;
+  num1=num1-num2;
+  System.out.println("swap no:\nNum1:"+num1+" Num2:"+num2);
+ 
+ }
+ public static void main(String[] args) {
+  Swap d = new Swap();
+  d.display();
+ }
+
+}
+-----------------------------------------------------------------------------------------------------------------
+Program for Travel Ticket:
+
+
+import java.util.Scanner;
+public class Passanger {
+	int pnrnumber=0;
+	String passengerName;
+	String source;
+	String destination;
+	String journeyDate;
+	Scanner sc = new Scanner(System.in);
+	public void bookTicket() {
+		System.out.print("Enter pnrnumber:");
+		pnrnumber = sc.nextInt();
+		System.out.print("Enter passengerName:");
+		passengerName = sc.next();
+		System.out.print("Enter source:");
+		source = sc.next();
+		System.out.print("Enter destination:");
+		destination = sc.next();
+		System.out.print("Enter journeyDate:");
+		journeyDate = sc.next();
+
+	}
+	public void cancelTicket()
+	{
+		System.out.println("Enter your pnr for cancelation");
+		pnrnumber = sc.nextInt();
+		System.out.println("Your ticket has been cancelled");
+	}
+	public void modifyTicket() {
+		System.out.println("Enter your pnr for modification");
+		pnrnumber = sc.nextInt();
+		System.out.println("Your ticket has been modified");
+	}
+	public void displayTicketDetails() {
+		System.out.println("Enter passengerName:"+passengerName);
+		System.out.println("Enter pnrnumber:"+pnrnumber);
+		System.out.println("Enter source:"+source);
+		System.out.println("Enter destination:"+destination);
+		System.out.println("Enter journeyDate:"+journeyDate);
+		}
+	
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Passanger c = new Passanger();
+		c.bookTicket();
+		c.cancelTicket();
+		c.modifyTicket();
+		c.displayTicketDetails();
+		
+		
+
+	}
+
+}
+
