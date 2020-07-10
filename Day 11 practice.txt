@@ -1,0 +1,519 @@
+Default and parametrized constructor:
+
+public class Cons {
+	public Cons() {
+		
+	}
+public Cons(int a) {
+		System.out.println("int"+a);
+	}
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Cons c =new Cons(2);
+------------------------------------------------------------------------------------------------------------
+Garbage collector:	
+
+public class Cons {
+	public void finalize() {
+		System.out.println("Finalize called");
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Cons c =new Cons();
+		Cons c2=new Cons();
+		c2=null;
+		System.gc();
+	
+
+	}
+
+}
+
+----------------------------------------------------------------------------------------------
+
+String:
+
+
+public class Stringdemo {
+	
+	public static void main(String[] args) {
+		String name = "mohan";
+		name.concat("Jay");
+		System.out.println("name");
+		name=name+"JJ";
+		System.out.println(name);
+	
+
+	}
+
+}
+
+o/p:-  
+ name
+mohanJJ
+------------------------------------
+
+public class Stringdemo {
+	
+	public static void main(String[] args) {
+		String name = new String("mohan");
+		String name2 =new String("mohan");
+		System.out.println(name.equals(name2));
+		System.out.println(name==name2);
+		
+		
+	
+
+	}
+
+}
+o/p:
+true
+false
+		
+
+------------------------------------------------------------------------------------------------------------StringBuffer,StringBuilder:
+
+public class Stringdemo {
+	
+	public static void main(String[] args) {
+		StringBuilder name = new StringBuilder("mohan");
+		name.append("Jay");
+		System.out.println(name);
+		
+	
+
+	}
+
+}
+o/p:
+mohanJay
+-----------------------------------------------------------------------------------------------
+WrapperClass:
+
+
+public class WrapperDemo {
+
+ public static void main(String[] args) {
+  String m= "12";
+  Integer i = Integer.parseInt(m);
+  System.out.println(i+10);
+  
+  Integer p = 10;
+  String str = String.valueOf(p);
+  System.out.println(str+9);
+ 
+ }
+}
+
+o/p:
+22
+109
+
+------------------------------------------------------------------------------------------------
+Inhertance:
+
+class  Animal{
+	int age=10;
+	public void eat() {
+		System.out.println("Animal should eat");
+	}
+}
+class Dog extends Animal
+{String gender;
+
+public void display() {
+	age=5;
+	System.out.println("The dog age is:"+age);
+}
+}
+public class InheritDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Dog d=new Dog();
+		d.eat();
+		d.display();
+
+	}
+
+}
+
+o/p:
+Animal should eat
+The dog age is:5
+-------
+
+function overriding:
+
+class  Animal{
+	int age=10;
+	public void eat() {
+		System.out.println("Animal should eat");
+	}
+}
+class Dog extends Animal
+{ int age=5;
+
+public void display() {
+	int age=1;
+	System.out.println("The dog age is:"+age);
+	System.out.println("The dog age is:"+this.age);
+	System.out.println("The dog age is:"+super.age);
+}
+
+public void eat() {
+	super.eat();
+	System.out.println("dosgs eats meat"+age);
+}
+}
+public class InheritDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Dog d=new Dog();
+		d.eat();
+		d.display();
+
+	}
+
+}
+o/p:
+Animal should eat
+dosgs eats meat5
+The dog age is:1
+The dog age is:5
+The dog age is:10
+----------------------------------------------------------------------------------------------------------------------
+
+Function overloading:
+
+
+public class Project {
+	private int productid;
+	private String productname;
+	private int quantity;
+	private int price;
+	public Project() {
+		productid = 100;
+		productname="not available";
+		quantity=500;
+		price=400;
+	}
+	
+
+	public Project(int productid, String productname) {
+		super();
+		this.productid = productid;
+		this.productname = productname;
+	}
+
+
+	public Project(int productid, String productname, int quantity, int price) {
+		super();
+		this.productid = productid;
+		this.productname = productname;
+		this.quantity = quantity;
+		this.price = price;
+	}
+	public void display() {
+		System.out.println("productid"+productid);
+		System.out.println("productname"+productname);
+		System.out.println("quantity"+quantity);
+		System.out.println("price"+price);
+	}
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Project project= new Project();
+		project.display();
+ 		Project project1= new Project(200,"gucci");
+		project1.display();
+	}
+
+}
+
+o/p:
+productid100
+productnamenot available
+quantity500
+price400
+productid200
+productnamegucci
+quantity0
+price0
+--------------------------------------------------------------------------------------------------------------------
+Using :To string
+*with out using any method to display*
+
+public class Project {
+	private int productid;
+	private String productname;
+	private int quantity;
+	private int price;
+	public Project() {
+		
+	}
+	
+
+
+	public Project(int productid, String productname, int quantity, int price) {
+		super();
+		this.productid = productid;
+		this.productname = productname;
+		this.quantity = quantity;
+		this.price = price;
+	}
+	
+	
+
+	@Override
+	public String toString() {
+		return "Project [productid=" + productid + ", productname=" + productname + ", quantity=" + quantity
+				+ ", price=" + price + "]";
+	}
+
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Project project1= new Project(12,"armani",100,200);
+	System.out.println(project1);
+	}
+
+}
+o/p:    Project [productid=12, productname=armani, quantity=100, price=200]
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Hash Code and Equals:
+
+
+public class Project {
+	private int productid;
+	private String productname;
+	private int quantity;
+	private int price;
+	public Project() {
+		
+	}
+	
+
+
+	public Project(int productid, String productname, int quantity, int price) {
+		super();
+		this.productid = productid;
+		this.productname = productname;
+		this.quantity = quantity;
+		this.price = price;
+	}
+	
+	
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + price;
+		result = prime * result + productid;
+		result = prime * result + ((productname == null) ? 0 : productname.hashCode());
+		result = prime * result + quantity;
+		return result;
+	}
+
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Project other = (Project) obj;
+		if (price != other.price)
+			return false;
+		if (productid != other.productid)
+			return false;
+		if (productname == null) {
+			if (other.productname != null)
+				return false;
+		} else if (!productname.equals(other.productname))
+			return false;
+		if (quantity != other.quantity)
+			return false;
+		return true;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "Project [productid=" + productid + ", productname=" + productname + ", quantity=" + quantity
+				+ ", price=" + price + "]";
+	}
+
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Project project1= new Project(12,"armani",100,200);
+	System.out.println(project1);
+	Project project2= new Project(12,"armani",100,200);
+	System.out.println(project1.equals(project2));
+	System.out.println(project1.hashCode());
+	System.out.println(project2.hashCode());
+	
+	}
+
+}
+
+o/p:
+Project [productid=12, productname=armani, quantity=100, price=200]
+true
+-732177111
+-732177111
+-------------------------------------------------------------------------------------------------------------------------
+Default constructor, parametrized constructor, to string, setter and getter method, hash code and equals:
+
+package com.dxc.pms.model;
+
+public class Product {
+	private int productId;
+	private String productName;
+	private int qualityOnHand;
+	private int price;
+	
+	public Product()
+	{
+		
+	}
+	
+
+	public Product(int productId, String productName, int qualityOnHand, int price) {
+		super();
+		this.productId = productId;
+		this.productName = productName;
+		this.qualityOnHand = qualityOnHand;
+		this.price = price;
+	}
+
+
+	public int getProductId() {
+		return productId;
+	}
+
+
+	public void setProductId(int productId) {
+		this.productId = productId;
+	}
+
+
+	public String getProductName() {
+		return productName;
+	}
+
+
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+
+
+	public int getQualityOnHand() {
+		return qualityOnHand;
+	}
+
+
+	public void setQualityOnHand(int qualityOnHand) {
+		this.qualityOnHand = qualityOnHand;
+	}
+
+
+	public int getPrice() {
+		return price;
+	}
+
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Product [productId=" + productId + ", productName=" + productName + ", qualityOnHand=" + qualityOnHand
+				+ ", price=" + price + "]";
+	}
+	
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + price;
+		result = prime * result + productId;
+		result = prime * result + ((productName == null) ? 0 : productName.hashCode());
+		result = prime * result + qualityOnHand;
+		return result;
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Product other = (Product) obj;
+		if (price != other.price)
+			return false;
+		if (productId != other.productId)
+			return false;
+		if (productName == null) {
+			if (other.productName != null)
+				return false;
+		} else if (!productName.equals(other.productName))
+			return false;
+		if (qualityOnHand != other.qualityOnHand)
+			return false;
+		return true;
+	}
+	
+
+
+}
+---------------
+Client.java
+---------------
+
+package com.dxc.pms.client;
+
+import com.dxc.pms.model.Product;
+
+public class Client {
+
+	public static void main(String[] args) {
+		Product product =new Product(1, "nivea", 20, 400);
+		product.setPrice(700);
+		System.out.println(product);
+	}
+
+}
+
+o/p:Product [productId=1, productName=nivea, qualityOnHand=20, price=700]
+
+
+
+
+
+
+
+
+
