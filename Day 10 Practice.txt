@@ -1,0 +1,189 @@
+Variable types:
+
+public class Variable {
+	int num1=100;
+	static int num2=200;
+	public void display() {
+		System.out.println("num1:"+num1);
+		System.out.println("num2:"+num2);
+	}
+	public void change()
+	{
+		num2++;
+	}
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("D1 object value");
+		Variable d1 = new Variable();
+		Variable d2 = new Variable();
+		d1.change();
+		d1.display();
+		System.out.println("D2 object value");
+		d2.display();
+		
+
+	}
+
+}
+-------------------------------------------------------------------------------------------
+
+import java.util.Scanner;
+
+public class Age {
+	int age=40;
+	public void accept() {
+		int age=0;
+		Scanner sc =  new Scanner(System.in);
+		System.out.println("Please enter your age");
+		age = sc.nextInt();
+		sc.close();
+		
+		System.out.println("Age entered by you is:"+age);
+		System.out.println("The age limit is"+this.age);
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Age ag =new Age();
+		ag.accept();
+
+	}
+
+}
+--------------------------------------------------------------------------------------------------
+
+public class Variable {
+	
+	
+	public void d1()
+	{
+		System.out.println("d1 called");
+	}
+	public void d2()
+	{   d1();
+		System.out.println("d2 called");
+	}
+	public  static void display()
+	{
+		System.out.println("Display of Demo class");
+	}
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Variable va = new Variable();
+		va.d2();
+		display();
+		va.display();
+		
+		
+
+	}
+---------------------------------------------------------------------------------------------------
+Overloading
+
+
+public class Overloading {
+	public void sum(int num1,int num2)
+	{
+		System.out.println("Sum of two numbers:"+(num1+num2));
+	}
+	public void sum(int num1,int num2,int num3)
+	{
+		System.out.println("Sum of numbers:"+(num1+num2+num3));
+	}
+	public void sum(int num1,int num2,int num3,int num4)
+	{
+		System.out.println("Sum of numbers:"+(num1+num2+num3+num4));
+	}
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Overloading or = new Overloading();
+		or.sum(2,4,8,9);
+
+	}
+
+}-------------------------------------------------------------------------------------------------
+
+
+public class Constructor {
+	int employeeId=100;
+	String employeename="vikasDubey";
+	
+	public Constructor() {
+		System.out.println("Cons called");
+		employeeId =200;
+		employeename= "Abishek";
+		
+	}
+	
+	public Constructor(int employeeId,String employeename) {
+		System.out.println("cons2 called");
+		this.employeeId=employeeId;
+		this.employeename= employeename;
+		
+	}
+	public void display() {
+		System.out.println("Emplyee Id:"+employeeId);
+		System.out.println("Emplyee name:"+employeename);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Constructor c =new Constructor();
+		Constructor sa =new Constructor(222,"hhh");
+		c.display();
+		sa.display();
+	}
+
+}
+----------------------------------------------------------------------------------------------------------
+
+
+import java.util.Scanner;
+
+public class ConstDemo {
+ 
+ int id = 100;
+ String name = "Abishek";
+
+ public ConstDemo() {
+
+  System.out.println("from ConstDemo");
+  id = 200;
+  name = "ball";
+ }
+
+ public ConstDemo(int id, String name) {
+
+  System.out.println("from ConstDemo");
+  this.id = id;
+  this.name = name;
+ }
+
+ public void disp() {
+  System.out.println("helllo from display");
+  System.out.println(" a : " + id);
+  System.out.println("name : " + name);
+ }
+
+ public static void main(String[] args) {
+  Scanner sc = new Scanner(System.in);
+  System.out.println("Hi abishek, please enter number and string");
+  int i = sc.nextInt();
+  String n = sc.next();
+  ConstDemo x = new ConstDemo();
+  ConstDemo x2 = new ConstDemo(i, n);
+  x.disp();
+  x2.disp();
+ }
+}
+
+
+
+
