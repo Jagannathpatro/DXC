@@ -1,0 +1,141 @@
+package test;
+
+public class Calculator {
+
+	  public int add(int a, int b){
+	        System.out.println("add(int a, int b) is called");
+	        return a+b;
+	    }
+	    
+	    public double add(int a, double b){
+	        System.out.println("add(int a, double b) is called");
+	        return a+b;
+	    }
+	    
+	    public double add(double a, int b){
+	        System.out.println("add(double a, int d) is called");
+	        return a+b;
+	    }
+	    
+	    public double add(double a, double b){
+	        System.out.println("add(double a, double d) is called");
+	        return a+b;
+	    }
+	    
+	    public int diff(int a, int b){
+	        System.out.println("add(int a, int b) is called");
+	        return a-b;
+	    }
+	    
+	    public double diff(int a, double b){
+	        System.out.println("add(int a, double b) is called");
+	        return a-b;
+	    }
+	    
+	    public double diff(double a, int b){
+	        System.out.println("add(double a, int d) is called");
+	        return a-b;
+	    }
+	    
+	    public double diff(double a, double b){
+	        System.out.println("add(double a, double d) is called");
+	        return a-b;
+	    }
+	    public int mul(int a, int b){
+	        System.out.println("add(int a, int b) is called");
+	        return a*b;
+	    }
+	    
+	    public double mul(int a, double b){
+	        System.out.println("add(int a, double b) is called");
+	        return a*b;
+	    }
+	    
+	    public double mul(double a, int b){
+	        System.out.println("add(double a, int d) is called");
+	        return a*b;
+	    }
+	    
+	    public double mul(double a, double b){
+	        System.out.println("add(double a, double d) is called");
+	        return a*b;
+	    }
+	    public int div(int a, int b){
+	        System.out.println("add(int a, int b) is called");
+	        return a/b;
+	    }
+	    
+	    public double div(int a, double b){
+	        System.out.println("add(int a, double b) is called");
+	        return a/b;
+	    }
+	    
+	    public double div(double a, int b){
+	        System.out.println("add(double a, int d) is called");
+	        return a/b;
+	    }
+	    
+	    public double div(double a, double b){
+	        System.out.println("add(double a, double d) is called");
+	        return a/b;
+	    }
+	    
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Calculator calc = new Calculator();
+		  System.out.println(calc.add(4, 8)); 
+	        System.out.println(calc.add(4, 8.5));
+	        System.out.println(calc.add(4.9, 8.9)); 
+	        System.out.println(calc.add(4.5, 8));
+	        System.out.println(calc.diff(4, 8)); 
+	        System.out.println(calc.diff(4, 8.5));
+	        System.out.println(calc.diff(4.9, 8.9)); 
+	        System.out.println(calc.diff(4.5, 8));
+	        System.out.println(calc.mul(4, 8)); 
+	        System.out.println(calc.mul(4, 8.5));
+	        System.out.println(calc.mul(4.9, 8.9)); 
+	        System.out.println(calc.mul(4.5, 8));
+	        System.out.println(calc.div(4, 8)); 
+	        System.out.println(calc.div(4, 8.5));
+	        System.out.println(calc.div(4.9, 8.9)); 
+	        System.out.println(calc.div(4.5, 8));
+	       
+	       
+	    }
+	    
+	  
+	}
+-------------------------------------------------
+0/p:	
+add(int a, int b) is called
+12
+add(int a, double b) is called
+12.5
+add(double a, double d) is called
+13.8
+add(double a, int d) is called
+12.5
+add(int a, int b) is called
+-4
+add(int a, double b) is called
+-4.5
+add(double a, double d) is called
+-4.0
+add(double a, int d) is called
+-3.5
+add(int a, int b) is called
+32
+add(int a, double b) is called
+34.0
+add(double a, double d) is called
+43.61000000000001
+add(double a, int d) is called
+36.0
+add(int a, int b) is called
+0
+add(int a, double b) is called
+0.47058823529411764
+add(double a, double d) is called
+0.550561797752809
+add(double a, int d) is called
+0.5625
