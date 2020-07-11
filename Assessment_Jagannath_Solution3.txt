@@ -1,0 +1,99 @@
+package org.animals;
+
+public class Lion {
+	int age=10;
+	float weight=300.50f;
+	String color= "yellow";
+	public void vegetarian() {
+		System.out.println("LION:");
+		System.out.println("LION Age is :"+age);
+		System.out.println("LION weight is:"+weight);
+		System.out.println("LION color is:"+color);
+		System.out.println("LION is a Non-vegetarian");
+	}
+	public void canClimb() {
+		System.out.println("LION can climb");
+	}
+	public void getSound() {
+		System.out.println("LION can get Sound");
+	}
+
+}
+--------------------------------------------------
+
+package org.animals;
+
+public class Elephant {
+	int age=12;
+	float weight=1050.70f;
+	String color= "Grey";
+	public void vegetarian() {
+		System.out.println("Elephant:");
+		System.out.println("Elephant Age is :"+age);
+		System.out.println("Elephant weight is:"+weight);
+		System.out.println("Elephant color is:"+color);
+		System.out.println("LION is a Vegetarian");
+	}
+	public void canClimb() {
+		System.out.println("Elephant can't climb");
+	}
+	public void getSound() {
+		System.out.println("Elephant can get Sound");
+	}
+
+}
+------------------------------------------------
+
+package org.animals;
+
+public class Monkey {
+	int age=6;
+	float weight=30.20f;
+	String color= "Brown";
+	public void vegetarian() {
+		System.out.println("Monkey:");
+		System.out.println("Monkey Age is :"+age);
+		System.out.println("Monkey weight is:"+weight);
+		System.out.println("Monkey color is:"+color);
+		System.out.println("LION is a Vegetarian");
+	}
+	public void canClimb() {
+		System.out.println("Monkey can climb");
+	}
+	public void getSound() {
+		System.out.println("Monkey can get Sound");
+	}
+
+}
+--------------------------------------------
+
+
+package zoo;
+
+
+import org.animals.Elephant;
+import org.animals.Lion;
+import org.animals.Monkey;
+
+public class Vandalurzoo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Lion lion =new Lion();
+		lion.vegetarian();
+		lion.canClimb();
+		lion.getSound();
+		Elephant elephant=new Elephant();
+		elephant.vegetarian();
+		elephant.canClimb();
+		elephant.getSound();
+		Monkey monkey = new Monkey();
+		monkey.vegetarian();
+		monkey.canClimb();
+		monkey.getSound();
+		
+		
+
+	}
+
+}
