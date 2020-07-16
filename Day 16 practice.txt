@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type = "text/javascript">
+function display(){
+	alert("Hi i am display 1");
+}
+function display(){
+	alert("Hi i am display 1");
+}
+</script>
+</head>
+<body>
+TextBox3:<input type="text"><br/>
+TextBox2:<input type="text" onfocus="display1()"><br/>
+TextBox3:<input type="text"onblur="display2()"><br/>
+<!-- <input type="button" value="ClickHereToContinue" onmouseover="display()" onmouseout="display2()"> -->
+</body>
+</html>
+------------------------------------------------------------
+function display1(){
+	alert("Hi i am display 1");
+}
+function display2(){
+	alert("Hi i am display 2");
+}
+function display3(){
+	alert("Hi i am display 3");
+	
+	}
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript" src="mysecondscript.js"></script>
+
+</head>
+<body>
+<form >
+
+TextBox1:<input type="text" onfocus="display1()" onclick="display2()"><br/>
+</form>
+
+</body>
+</html>
+-----------------------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login page</title>
+<script>
+function validateUserdetails(){
+var uname=document.getElementById("Username").value;
+var pass=document.getElementById("password").value;
+if(uname.length==0)
+{
+alert("Please enter your name")}
+else if (pass.length==0){
+	alert("Please enter your password")
+}
+else{
+alert("Welcome :"+uname)
+}
+
+
+}
+
+
+</script>
+</head>
+<body>
+<form action="result.html"> <!-- method="post" -->
+	<h2>Product Form</h2>
+	<table cellspacing="10" cellpadding="10" align="center">
+	<tr><td>User Name:</td><td><input type="text" name="Username" id="Username"></td></tr>
+	<tr><td>Password:</td><td><input type="password" name="password" id="password"></td></tr>
+	<tr><td><input type="submit" value="Login"></td>
+	<td> <input type="button" value="Check" onclick="validateUserdetails()"></td><td><input type="reset" value="Clear"></td>
+	</tr>
+	
+	
+	</table>
+
+
+</form>
+</body>
+</html>
+------------------------------------------------------------------------------------
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function validateForm() {//alert("Validate Form Called")
+		//var txtValue1 =document.getElementById("textbox1")
+		var allData = new Array();
+		var result = new Boolean(true);
+		for (var i = 0; i < 10; i++) {
+			allData[i] = document.forms[0].elements[i].value;
+			if (allData[i].length == 0) {
+				alert("Please fill all the details")
+				result = false;
+				break;
+			}}
+			
+			if (result) {
+				document.write("All the details entered by you is:")
+				document.write(allData)
+			} 
+			else {
+				document.write("sorry, you have not filled all the data")
+			}
+		
+	
+	}
+</script>
+</head>
+<body>
+	<form>
+		*TextBox1 : <input type="text" name="textbox1" id="textbox1"><br />
+		*TextBox2 : <input type="text" name="textbox2" id="textbox2"><br />
+		*TextBox3 : <input type="text" name="textbox3" id="textbox3"><br />
+		*TextBox4 : <input type="text" name="textbox4" id="textbox4"><br />
+		*TextBox5 : <input type="text" name="textbox5" id="textbox5"><br />
+		*TextBox6 : <input type="text" name="textbox6" id="textbox6"><br />
+		*TextBox7 : <input type="text" name="textbox7" id="textbox7"><br />
+		*TextBox8 : <input type="text" name="textbox8" id="textbox8"><br />
+		*TextBox9 : <input type="text" name="textbox9" id="textbox9"><br />
+		*TextBox10 : <input type="text" name="textbox10" id="textbox10"><br />
+		<input type="button" value="Print" onclick="validateForm()">
+	</form>
+
+</body>
+</html>
+-----------------------------------------------------------------------------------
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login page</title>
+<script>
+function validateUserdetails(){
+var uname=document.getElementById("Username").value;
+//var pass=document.getElementById("password").value;
+var pass=document.forms[0].elements[1].value;
+//var pass=document.myform.password.value
+var cnfrmpass=document.forms[0].elements[2].value;
+alert(uname+"  "+pass)
+if(uname.length==0)
+{
+alert("Please enter your name")}
+else if (pass.length==0){
+	alert("Please enter your password")
+}
+else if(pass!= cnfrmpass){
+	alert("Password and confirm password does not match")
+}
+else if(pass.length<6 && pass.length>12){
+	alert("Password should be between 6-12 characters")
+}
+else{
+alert("Welcome :"+uname)
+} 
+
+
+}
+
+
+</script>
+</head>
+<body>
+<form action="result.html" name="myform"> <!-- method="post" -->
+	<h2>Product Form</h2>
+	<table cellspacing="10" cellpadding="10" align="center">
+	<tr><td>User Name:</td><td><input type="text" name="Username" id="Username"></td></tr>
+	<tr><td>Password:</td><td><input type="password" name="password" id="password"></td></tr>
+	<tr><td>confPassword:</td><td><input type="password" name="confpassword" id="confpassword"></td></tr>
+	<tr><td><input type="submit" value="Login"></td>
+	<td> <input type="button" value="Check" onclick="validateUserdetails()"></td><td><input type="reset" value="Clear"></td>
+	</tr>
+	
+	
+	</table>
+
+
+</form>
+<form action="result.html" name="mysecondform"> <!-- method="post" -->
+	<h2>Product2 Form</h2>
+	<table cellspacing="10" cellpadding="10" align="center">
+	<tr><td>User Name:</td><td><input type="text" name="Username" id="Username"></td></tr>
+	<tr><td>Password:</td><td><input type="password" name="password" id="password"></td></tr>
+	<tr><td><input type="submit" value="Login"></td>
+	<td> <input type="button" value="Check" onclick="validateUserdetails()"></td><td><input type="reset" value="Clear"></td>
+	</tr>
+	
+	
+	</table>
+
+
+</form>
+</body>
+</html>
+--------------------------------------------------------------------------------------------------------------
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+function changeMessage(){
+	var divData1 = document.getElementById("div1");
+	divData1.innerHTML ="<font color=red> Welcome to Dxc"
+		var divData2 = document.getElementById("span2");
+	divData2.innerHTML ="<font color=green> Hello i am jagannath"
+
+}
+
+
+
+
+</script>
+</head>
+<body>
+<div id="div1"> Good Morning</div>
+<div id="div2"> Good Night</div>
+<span id="span1"> Message is:</span>
+<span id="span2"> We are learning javascript</span>
+<br/>
+<br/>
+<br/>
+<br/>
+<input type="button" value="Go"  onclick="changeMessage()">
+
+
+
+</body>
+</html>
+---------------------------------------------------------------------------------------------------------------------------
