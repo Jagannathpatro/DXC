@@ -1,0 +1,596 @@
+Sets:
+
+import java.util.Set;
+import java.util.TreeSet;
+
+public class SetsDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Set demo = new TreeSet();
+		
+		demo.add("kapoor");
+		demo.add("jayanth");
+		demo.add("raj");
+		demo.add("bhargav");
+		demo.add("kranthi");
+		System.out.println(demo);
+	}
+
+}
+
+o/p:[bhargav, jayanth, kapoor, kranthi, raj]
+
+---------------------------------------------------------------------------------------
+Iterator with sets:
+
+import java.util.Iterator;
+import java.util.Set;
+import java.util.TreeSet;
+
+public class SetsDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Set demo = new TreeSet();
+		
+		demo.add("kapoor");
+		demo.add("jayanth");
+		demo.add("raj");
+		demo.add("bhargav");
+		demo.add("kranthi");
+		
+		Iterator<String> nameIterator =demo.iterator();
+		while(nameIterator.hasNext())
+		{
+			String value = nameIterator.next();
+			System.out.println(value);
+		}
+		
+	}
+
+}
+
+o/p:
+bhargav
+jayanth
+kapoor
+kranthi
+raj
+-----------------------------------------------------------------------------------------
+customer in other class
+
+
+public class Customer1 {
+	private int customerId;
+	private String customerName;
+	private String customerAddress;
+	private int billAmount;
+	
+	public Customer1() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+
+	public Customer1(int customerId, String customerName, String customerAddress, int billAmount) {
+		super();
+		this.customerId = customerId;
+		this.customerName = customerName;
+		this.customerAddress = customerAddress;
+		this.billAmount = billAmount;
+	}
+
+
+
+	public int getCustomerId() {
+		return customerId;
+	}
+
+
+
+	public void setCustomerId(int customerId) {
+		this.customerId = customerId;
+	}
+
+
+
+	public String getCustomerName() {
+		return customerName;
+	}
+
+
+
+	public void setCustomerName(String customerName) {
+		this.customerName = customerName;
+	}
+
+
+
+	public String getCustomerAddress() {
+		return customerAddress;
+	}
+
+
+
+	public void setCustomerAddress(String customerAddress) {
+		this.customerAddress = customerAddress;
+	}
+
+
+
+	public int getBillAmount() {
+		return billAmount;
+	}
+
+
+
+	public void setBillAmount(int billAmount) {
+		this.billAmount = billAmount;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "Customer1 [customerId=" + customerId + ", customerName=" + customerName + ", customerAddress="
+				+ customerAddress + ", billAmount=" + billAmount + "]";
+	}
+
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + billAmount;
+		result = prime * result + ((customerAddress == null) ? 0 : customerAddress.hashCode());
+		result = prime * result + customerId;
+		result = prime * result + ((customerName == null) ? 0 : customerName.hashCode());
+		return result;
+	}
+
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Customer1 other = (Customer1) obj;
+		if (billAmount != other.billAmount)
+			return false;
+		if (customerAddress == null) {
+			if (other.customerAddress != null)
+				return false;
+		} else if (!customerAddress.equals(other.customerAddress))
+			return false;
+		if (customerId != other.customerId)
+			return false;
+		if (customerName == null) {
+			if (other.customerName != null)
+				return false;
+		} else if (!customerName.equals(other.customerName))
+			return false;
+		return true;
+	}
+
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+-----------------------------------
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class CustomerMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+ArrayList<Customer1> customers = new ArrayList<Customer1>();
+Customer1 cos1 = new Customer1(10, "mohan", "delhi", 20000);
+Customer1 cos2 = new Customer1(20, "kumar", "chennai", 20000);
+Customer1 cos3 = new Customer1(50, "sai", "hyd", 20000);
+Customer1 cos4 = new Customer1(40, "venkat", "mumbai", 20000);
+
+customers.add(cos1);
+customers.add(cos2);
+customers.add(cos3);
+customers.add(cos4);
+customers.add(new Customer1(14,"jaj","hshsu",2777));
+Iterator<Customer1> itercustomer = customers.iterator();
+while (itercustomer.hasNext()){
+	Customer1 cust =itercustomer.next();
+	System.out.println(cust);
+}
+
+
+	}
+
+}
+
+
+o/p:
+
+Customer1 [customerId=10, customerName=mohan, customerAddress=delhi, billAmount=20000]
+Customer1 [customerId=20, customerName=kumar, customerAddress=chennai, billAmount=20000]
+Customer1 [customerId=50, customerName=sai, customerAddress=hyd, billAmount=20000]
+Customer1 [customerId=40, customerName=venkat, customerAddress=mumbai, billAmount=20000]
+Customer1 [customerId=14, customerName=jaj, customerAddress=hshsu, billAmount=2777]
+-----------------------------------------------------------------------------------
+
+Map:
+
+
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+public class MapDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Map<String,Integer> playerDetails = new LinkedHashMap<String, Integer>();
+		playerDetails.put("euuu", 1627);
+		playerDetails.put("grgr", 162467);
+		playerDetails.put("eufbuu", 15334627);
+		playerDetails.put("hthg", 63);
+		playerDetails.put("fbbk,", 1627);
+System.out.println(playerDetails);
+*********
+	}
+
+}
+o/p:
+{euuu=1627, grgr=162467, eufbuu=15334627, hthg=63, fbbk,=1627}
+*************************
+Set set = playerDetails.entrySet();
+Iterator i =set.iterator();
+while(i.hasNext()) {
+	Map.Entry data =(Map.Entry) i.next();
+	System.out.println(data.getKey()+"  "+data.getValue());
+o/p:
+euuu  1627
+grgr  162467
+eufbuu  15334627
+hthg  63
+fbbk  1627
+******************************
+
+Set <Map.Entry<String,Integer>> set = playerDetails.entrySet();
+Iterator<Entry<String, Integer>> i =set.iterator();
+while(i.hasNext()) {
+	Entry<String, Integer> data =i.next();
+	System.out.println(data.getKey()+"  "+data.getValue());
+}
+---------------------------------------------------------------------------------------------
+Type casting: converting from one type to other.
+here we are coverting object type to string type. 
+
+package collectiondemo;
+
+import java.util.*;
+
+public class DoubtCasting {
+
+ public static void main(String[] args) {
+  List<String> names = new ArrayList<String>();
+  names.add("Jagan");
+  names.add("Mohan");
+  names.add("Reddy");
+
+  Iterator<String> i = names.iterator();
+  while (i.hasNext()) {
+   {
+    String str = i.next(); // Object
+    System.out.println(str);
+   }
+
+  }
+ }
+}
+
+*************************
+Set <Map.Entry<String,Integer>> set = playerDetails.entrySet();
+Iterator<Entry<String, Integer>> i =set.iterator();
+while(i.hasNext()) {
+	Entry<String, Integer> data =i.next();
+	System.out.println(data.getKey()+"  "+data.getValue());
+*************************
+Set set = playerDetails.entrySet();
+Iterator i =set.iterator();
+while(i.hasNext()) {
+	Map.Entry data =(Map.Entry) i.next();
+	System.out.println(data.getKey()+"  "+data.getValue());
+-----------------------------------------------------------------------------------------
+Exception handling:
+package exception;
+
+import java.util.Scanner;
+
+public class Demo1 {
+
+ int num1, num2, result;
+
+ public void display() {
+  Scanner sc = new Scanner(System.in);
+
+  System.out.println("Please enter first number :");
+  num1 = sc.nextInt();
+
+  System.out.println("Please enter second number :");
+  num2 = sc.nextInt();
+
+  try {
+   result = num1 / num2;
+  } catch (Exception e) {
+   System.out.println("Some problem occurred");
+  }
+  System.out.println("The result is : " + result);
+ }
+
+ public static void main(String[] args) {
+  System.out.println("Hello, Program started");
+  Demo1 d = new Demo1();
+  d.display();
+  System.out.println("Bye, Program ended");
+ }
+}
+------------------------------------------------------------------------------------------------------------
+
+JDBC: connection to oracle
+
+package com;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+
+public class FetchDataFromOracle {
+public static void main(String[] args) throws ClassNotFoundException, SQLException {
+Class.forName("oracle.jdbc.driver.OracleDriver");
+System.out.println("Driver Loaded");
+Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521/xe", "system", "jagannath");
+System.out.println("connected");
+Statement stat = con.createStatement();
+ResultSet res = stat.executeQuery("select*from hr.employees");
+while (res.next()) {
+	System.out.println(res.getString("first_name")+"");
+	System.out.println(res.getString("salary"));
+}
+	stat.close();
+	con.close();
+}
+}
+
+o/p:
+Driver Loaded
+connected
+Steven
+24000
+Neena
+17000
+Lex
+17000
+Alexander
+9000
+Bruce
+6000
+David
+4800
+Valli
+4800
+Diana
+4200
+Nancy
+12008
+Daniel
+9000
+John
+8200
+Ismael
+7700
+Jose Manuel
+7800
+Luis
+6900
+Den
+11000
+Alexander
+3100
+Shelli
+2900
+Sigal
+2800
+Guy
+2600
+Karen
+2500
+Matthew
+8000
+Adam
+8200
+Payam
+7900
+Shanta
+6500
+Kevin
+5800
+Julia
+3200
+Irene
+2700
+James
+2400
+Steven
+2200
+Laura
+3300
+Mozhe
+2800
+James
+2500
+TJ
+2100
+Jason
+3300
+Michael
+2900
+Ki
+2400
+Hazel
+2200
+Renske
+3600
+Stephen
+3200
+John
+2700
+Joshua
+2500
+Trenna
+3500
+Curtis
+3100
+Randall
+2600
+Peter
+2500
+John
+14000
+Karen
+13500
+Alberto
+12000
+Gerald
+11000
+Eleni
+10500
+Peter
+10000
+David
+9500
+Peter
+9000
+Christopher
+8000
+Nanette
+7500
+Oliver
+7000
+Janette
+10000
+Patrick
+9500
+Allan
+9000
+Lindsey
+8000
+Louise
+7500
+Sarath
+7000
+Clara
+10500
+Danielle
+9500
+Mattea
+7200
+David
+6800
+Sundar
+6400
+Amit
+6200
+Lisa
+11500
+Harrison
+10000
+Tayler
+9600
+William
+7400
+Elizabeth
+7300
+Sundita
+6100
+Ellen
+11000
+Alyssa
+8800
+Jonathon
+8600
+Jack
+8400
+Kimberely
+7000
+Charles
+6200
+Winston
+3200
+Jean
+3100
+Martha
+2500
+Girard
+2800
+Nandita
+4200
+Alexis
+4100
+Julia
+3400
+Anthony
+3000
+Kelly
+3800
+Jennifer
+3600
+Timothy
+2900
+Randall
+2500
+Sarah
+4000
+Britney
+3900
+Samuel
+3200
+Vance
+2800
+Alana
+3100
+Kevin
+3000
+Donald
+2600
+Douglas
+2600
+Jennifer
+4400
+Michael
+13000
+Pat
+6000
+Susan
+6500
+Hermann
+10000
+Shelley
+12008
+William
+8300
+------------------------------------------------------------------------------------------------------------
+
+
+
+
