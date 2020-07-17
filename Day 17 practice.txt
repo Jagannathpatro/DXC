@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login page</title>
+<script>
+function validateUserdetails(){
+	
+var uname=document.getElementById("Username").value;
+//var pass=document.getElementById("password").value;
+var pass=document.forms[0].elements[1].value;
+//var pass=document.myform.password.value
+var cnfrmpass=document.forms[0].elements[2].value;
+//alert(uname+"  "+pass)
+var errUserName =document.getElementById("errUserName")
+var errPassword =document.getElementById("errPassword")
+var errConfirmPassword =document.getElementById("errConfPassword")
+
+errUserName.innerText="";
+errPassword.innerText="";
+errConfirmPassword.innerText="";
+
+
+
+if(uname.length==0)
+{
+//alert("Please enter your name")
+errUserName.innerHTML="<font color='red'>Please enter username</font>"
+return false;
+}
+else if (pass.length==0){
+	//alert("Please enter your password")
+	errPassword.innerHTML="<font color='red'>Please enter your password</font>"
+	return false;
+}
+else if(pass!= cnfrmpass){
+	//alert("Password and confirm password does not match")
+	errConfirmPassword.innerHTML="<font color='red'>Password and confirm password does not match</font>"
+	return false;
+}
+else if(pass.length<6 || pass.length>12){
+	//alert("Password should be between 6-12 characters")
+	errUserName.innerHTML="<font color='red'>Password should be between 6-12 characters</font>"
+	return false;
+}
+else{
+alert("Welcome :"+uname)
+} 
+
+
+}
+
+
+</script>
+</head>
+<body>
+<form action="result.html" name="myform" onsubmit="return validateUserdetails()"> <!-- method="post" -->
+	<h2>Product Form</h2>
+	<table cellspacing="10" cellpadding="10" align="center">
+	<tr><td>User Name:</td><td><input type="text" name="Username" id="Username"></td><td> <span id="errUserName"></span></td></tr>
+	<tr><td>Password:</td><td><input type="password" name="password" id="password"></td><td><span id="errPassword"></span></td></tr>
+	<tr><td>confPassword:</td><td><input type="password" name="confpassword" id="confpassword"></td><td><span id="errConfPassword"></span></td></tr>
+	<tr><td><input type="submit" value="Login1"></td>
+	<td><input type="reset" value="Clear"></td>
+	</tr>
+	
+	
+	</table>
+
+
+</form>
+</html>
+-----------------------------------------------------------------------
+<HTML>
+<HEAD><TITLE>Credit Card Registration Form</TITLE>
+<script type="text/javascript" src="validate.js" >
+</script>
+</HEAD>
+
+<BODY>
+
+<form name="f1">
+
+<center><h2>Online Credit Card Application Form</h2></center>
+
+<label>State:*</label>
+
+<select id="state" onchange="mydisp('none');">
+      <option>AndhraPradesh</option>          
+       <option >TamilNadu</option>
+       <option>Karnataka</option>
+       <option>Maharashtra</option>
+       <option>Kashmir</option>
+       <option>Kerala</option>
+	   <option>Telangana</option>
+     </select>
+
+<br><br>
+<label>City:*</label><select style="display:none;" id='cities'></select>
+
+</form>
+</BODY>
+</HTML>
+*****************************
+function mydisp(action)
+{
+	if (action=="none") 
+	{
+		document.getElementById('cities').style.display = "block";
+	} 
+	else
+	{
+		document.getElementById('cities').style.display = "none";
+	}
+
+   var x =document.f1.state.options[document.f1.state.selectedIndex].text;	
+	alert(x);
+
+
+	var apCities = new Array("Hyderabad","Vizag","Vijayawada","A","B","P");
+	var tnCities = new Array("Chennai","Banglore","Coimbatore","Nellore","Terunveli","Hosur");
+	var knCities = new Array("Mysore","Mandia","Raichur","Hubli","Hasan","Bellary");
+	var mnCities = new Array("Mumbai","Pune","Nagpur","Kurla","Thane","Bandra");
+	var ksCities = new Array("Jammu","Kashmir","Udham","Vashno","A","B");
+	var keralaCities = new Array("Kochi","Trnddrim","Palakkad","Kottayam","LuluMall","Wayanad");
+	var telanganaCities = new Array("Hyderabad","Warangal","KarimNagar","Secundarabad","Kappam","Medhak");
+
+
+
+	var y = document.f1.cities;
+
+	if(x=="AndhraPradesh")
+	{
+		y.length = 0;
+		for(i=0;i<apCities.length;i++)
+		{
+			option = new Option(apCities[i]);
+			y.options[i] = option;
+      		}
+   	}
+	if(x=="TamilNadu")
+	{
+		y.length = 0;
+		for(i=0;i<tnCities.length;i++)
+		{
+			option = new Option(tnCities[i]);
+			y.options[i] = option;
+		}
+   	}
+	if(x=="Karnataka")
+	{
+		y.length = 0;
+		for(i=0;i<knCities.length;i++)
+		{
+			option = new Option(knCities[i]);
+			y.options[i] = option;
+		}
+   	}
+	if(x=="Maharashtra")
+	{
+		y.length = 0;
+		for(i=0;i<mnCities.length;i++)
+		{
+			option = new Option(mnCities[i]);
+			y.options[i] = option;
+		}
+   	}
+	if(x=="Kashmir")
+	{
+		y.length = 0;
+		for(i=0;i<ksCities.length;i++)
+		{
+			a= new Option(ksCities[i]);
+			y.options[i] = a;
+		}
+   	}
+	if(x=="Kerala")
+	{
+		y.length = 0;
+		for(i=0;i<keralaCities.length;i++)
+		{
+			a = new Option(keralaCities[i]);
+			y.options[i] = a;
+		}
+   	}
+	if(x=="Telangana")
+	{
+		y.length = 0;
+		for(i=0;i<telanganaCities.length;i++)
+		{
+			option = new Option(telanganaCities[i]);
+			y.options[i] = option;
+      	}
+   	}
+
+}
+------------------------------------------------------------------------
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+function add(){
+	var mainDiv =document.getElementById('myDiv1');
+	
+	var newDiv =document.createElement('div');
+	newDiv.setAttribute('id','innerDiv');
+	
+	var newSpan =document.createElement('span');
+	newSpan.setAttribute('id','mySpan');
+	newSpan.innerHTML="User Name:";
+	
+	var newTextBox =document.createElement('input');
+	newTextBox.type='text';
+	newTextBox.setAttribute('id','username');
+	
+	newDiv.appendChild(newSpan);
+	newDiv.appendChild(newTextBox);
+	mainDiv.appendChild(newDiv);
+}
+function add1(){
+	var mainDiv =document.getElementById('myDiv1');
+	
+	var newDiv =document.createElement('div');
+	newDiv.setAttribute('id','innerDiv');
+	
+	var newSpan =document.createElement('span');
+	newSpan.setAttribute('id','mySpan');
+	newSpan.innerHTML="password:";
+	
+	var password =document.createElement('input');
+	password.type='password';
+	password.setAttribute('id','username');
+	
+	newDiv.appendChild(newSpan);
+	newDiv.appendChild(password);
+	mainDiv.appendChild(newDiv);
+}
+
+
+</script>
+</head>
+<body>
+<div id="myDiv1">
+<input id="Button1" type="button" value="Add A text Box" onclick="add()"/><br/>
+<input id="Button2" type="button" value="Add A password Box" onclick="add1()"/>
+
+</div>
+</body>
+</html>
+***********************************************************************************
+function add(){
+	var mainDiv =document.getElementById('myDiv1');
+	
+	var newDiv =document.createElement('div');
+	newDiv.setAttribute('id','innerDiv');
+	
+	var newSpan =document.createElement('span');
+	newSpan.setAttribute('id','mySpan');
+	newSpan.innerHTML="User Name:";
+	
+	var newTextBox =document.createElement('input');
+	newTextBox.type='text';
+	newTextBox.setAttribute('id','username');
+	
+
+	
+	
+	
+	var newSpan1 =document.createElement('span');
+	newSpan1.setAttribute('id','mySpan1');
+	newSpan1.innerHTML="password:";
+	
+	var password =document.createElement('input');
+	password.type='password';
+	password.setAttribute('id','password');
+	
+	var breakelement =document.createElement('br');
+	
+	newDiv.appendChild(newSpan);
+	newDiv.appendChild(newTextBox);
+	newDiv.appendChild(breakelement);
+	
+	newDiv.appendChild(newSpan1);
+	newDiv.appendChild(password);
+	mainDiv.appendChild(newDiv);
+}
+-----------------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+function one(outer_arg){
+	//console.log("outer_arg:"+outer_arg);
+	function inner(inner_arg)
+	{
+		//console.log("outer_arg:"+outer_arg);
+		//console.log("outer_arg:"+inner_arg);
+		return outer_arg+inner_arg;
+		
+	}
+	return inner;
+}
+//console.log("1-passing 5");
+var a=one(5);
+//console.log("1-passing 4");
+console.log(a(4));
+//console.log("1-passing 3");
+console.log(a(3));
+console.dir(a);
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
+-------------------------------------------------------------------------------
+<html>
+<head>
+<title>Validate</title>
+<script>
+    function check()
+    {
+        with (document.forms[0])
+        {
+            if (name.value == "")
+            {
+                alert("Please enter name");
+                return false;
+            }
+            else if (address.value == "")
+            {
+                alert("Please enter address");
+                return false;
+            }
+            s = like[0].checked ? like[0].value : like[1].value;
+            s = "Thankyou," + name.value + ". You " + s + " our site.\n";
+            s = s + "Your suggesstion (";
+            for (i = 0; i < better.length; i++)
+                if (better[i].checked)
+                    s = s + better[i].value + ";"
+            s = s + " ) are recorded ";
+        }
+        alert(s);
+        return true;
+    }
+</script>
+</head>
+<body>
+    <form action="result.html" onSubmit="return check()">
+        Name: <input type=text name="name"><br> <br>
+        Address: <input type=text name="address"><br> <br>
+        Do you like our site
+        <input type=radio name="like" value="like" checked>Yes
+        <input type=radio name="like" value="don't like">No
+        <br>
+        <br> Tell us how we can make this site better for you:<br>
+        <input type=checkbox name="better" value="Change the bg color">Change the bg color <br>
+        <input type=checkbox name="better"value="Change the fg color">Change the fg color <br>
+        <input type=checkbox name="better" value="Change the layout">Change the layout <br>
+        <input type=checkbox name="better" value="Include more services">Include more services <br>
+        <br>
+        <input type=submit>
+    </form>
+</body>
+</html>
+-----------------------------------------------------------------------------------
+<html>
+<head>
+<script type="text/javascript">
+   function remSelOpt(inp1,sel1){
+	   len1= sel1.options.length;
+	   for(i=0;i<len1;i++){
+		   if(sel1.options[i].value==inp1.value){
+			   sel1.options[i]=null;
+			   break;
+		   }
+	   }
+   }
+   function addSelOpt(inp1,sel1){
+	   len1 =sel1.options.length;
+	   optionO = new Option(inp1.value,inp1.value);
+	   sel1.options[len1]=optionO;
+   }
+</script>
+</head>
+<body>
+    <form>
+        enter what to del: <input type=text name="removeOption"
+            onblur="remSelOpt(this,this.form.selectList)"> <br>
+        enter what to enter:
+        <input type=text name="removeOption" onblur="addSelOpt(this,this.form.selectList)"> <br>
+            <select id="selectList" name="selectList">
+            <option value="--">--</option>
+            <option value="one" selected="selected">one</option>
+            <option value="two">two</option>
+            <option value="three">three</option>
+        </select>
+    </form>
+</body>
+</html>
+-------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+var name="jagannath";
+(function(myData){
+	alert(myData)
+})(name);
+function display(data){
+	alert("via normal:"+data)
+}
+display(name);
+((abc)=>{
+	alert("via Arrow:"+abc)
+})(name)
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
+-------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+function display(){
+	var text='{"employeeName":"Neha Kapoor"}';
+	var a=JSON.parse(text);
+	document.getElementById("p1").innerHTML= a.employeeName;
+}</script>
+</head>
+<body>
+<p id="p1">Hello</p>
+<input type="button" value="Go" onclick="display()">
+</body>
+</html>
+
