@@ -1,0 +1,68 @@
+JSON:
+{
+	"employees": [{
+			"firstNmae": "jhon",
+			"lastname": "Doe"
+		},
+		{
+			"firstNmae": "jhon",
+			"lastname": "Doe"
+		},
+		{
+			"firstNmae": "jhon",
+			"lastname": "Doe"
+		}
+	]
+}
+
+XML:
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+   <employees>
+      <element>
+         <firstNmae>jhon</firstNmae>
+         <lastname>Doe</lastname>
+      </element>
+      <element>
+         <firstNmae>jhon</firstNmae>
+         <lastname>Doe</lastname>
+      </element>
+      <element>
+         <firstNmae>jhon</firstNmae>
+         <lastname>Doe</lastname>
+      </element>
+   </employees>
+</root>
+---------------------------------------------------------------
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<p id="demo"></p>
+<script type="text/javascript">
+var customers=[{
+	"employeeName":"jagan",
+	"salary":175000,
+	"married":true,
+	"isCertified":null,
+	"children":[{"firstName":"uquu","age":6},{"firstName":"uqyyqu","age":8}]
+},
+
+{"employeeName":"raj",
+	"salary":175000,
+	"married":false,
+	"isCertified":null,
+	"children":[{"firstName":"abc","age":9},{"firstName":"xyz","age":10}]
+	}]
+
+document.getElementById("demo").innerHTML=
+	customers[0].employeeName+": Your salary is"+customers[0].salary
+	+" and your second child name is :"+customers[0].children[1].firstName;
+
+</script>
+
+</body>
+</html>
