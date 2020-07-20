@@ -1,0 +1,137 @@
+JSON:
+
+{
+  "json": [
+    "rigid",
+    "better for data interchange"
+  ],
+  "yaml": [
+    "slim and flexible",
+    "better for configuration"
+  ],
+  "object": {
+    "key": "value",
+    "array": [
+      {
+        "null_value": null
+      },
+      {
+        "boolean": true
+      },
+      {
+        "integer": 1
+      }
+    ]
+  },
+  "paragraph": "Blank lines denote\nparagraph breaks\n",
+  "content": "Or we\ncan auto\nconvert line breaks\nto save space"
+  "employeeDetails": {
+    "name": "ganesh",
+    "mobile": [
+      6379598089,
+      8501858219
+    ]
+  }
+}
+
+
+
+YAML:
+
+
+---
+# <- yaml supports comments, json does not
+# did you know you can embed json in yaml?
+# try uncommenting the next line
+#{ foo: 'bar' }
+
+json:
+  - rigid
+  - better for data interchange
+yaml:
+  - slim and flexible
+  - better for configuration
+object:
+	key: value
+  array:
+    - null_value:
+    - boolean: true
+    - integer: 1
+paragraph: >
+   Blank lines denote
+
+   paragraph breaks
+content: |-
+   Or we
+   can auto
+   convert line breaks
+   to save space
+   yuuuyyuyuyyu
+employeeDetails:
+     name: ganesh
+     mobile:
+          - 6379598089
+          - 8501858219
+----------------------------------------
+PYTHON:
+
+
+str="hi"
+print(str)
+str = 'Hi EveryOne from DXC'
+
+print(str)          # Prints complete string
+str = 'Hi EveryOne from Deloitte'
+
+print(str[0])       # Prints first character of the string
+print(str[2:5])     # Prints characters starting from 3rd to 5th
+print(str[2:])      # Prints string starting from 3rd character
+print(str * 2)      # Prints string two times
+print(str + "TEST") # Prints concatenated string
+x = 14
+y = 4
+# Add two operands
+print('x + y =', x+y) # Output: x + y = 18
+# Subtract right operand from the left
+print('x - y =', x-y) # Output: x - y = 10
+# Multiply two operands
+print('x * y =', x*y) # Output: x * y = 56
+# Divide left operand by the right one 
+print('x / y =', x/y) # Output: x / y = 3.5
+# Floor division (quotient)
+print('x // y =', x//y) # Output: x // y = 3
+
+# Remainder of the division of left operand by the right
+print('x % y =', x%y) # Output: x % y = 2
+
+# Left operand raised to the power of right (x^y)
+print('x ** y =', x**y) # Output: x ** y = 38416
+x = int(input("enter 1 no:"))
+y = int(input("enter 2 no:"))
+print("The add result is :", x+y)
+# Python program to demonstrate  
+# Creation of Array  
+  
+# importing "array" for array creations 
+import array as arr 
+  
+# creating an array with integer type 
+a = arr.array('i', [1, 2, 3]) 
+  
+# printing original array 
+print ("The new created array is : ", end =" ") 
+for i in range (0, 3): 
+    print (a[i], end =" ") 
+print() 
+  
+# creating an array with float type 
+b = arr.array('d', [2.5, 3.2, 3.3]) 
+  
+# printing original array 
+print ("The new created array is : ", end =" ") 
+for i in range (0, 3): 
+    print (b[i], end =" ") 
+
+
+
+
